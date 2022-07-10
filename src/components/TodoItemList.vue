@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <ul>
     <TodoItem v-for="{ id, task } in tasks" :key="id" :task="task" />
-  </div>
+  </ul>
 </template>
 
 <script setup>

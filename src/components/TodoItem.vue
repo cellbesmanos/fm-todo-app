@@ -1,5 +1,5 @@
 <template>
-  <div>{{ task }}</div>
+  <li>{{ task }}</li>
 </template>
 
 <script setup>
