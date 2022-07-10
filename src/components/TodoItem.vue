@@ -1,5 +1,9 @@
 <template>
-  <div>This is the TodoItem component</div>
+  <div>{{ task }}</div>
 </template>
 
-<script setup></script>
+<script setup>
+const { task } = defineProps({
+  task: String,
+});
+</script>
