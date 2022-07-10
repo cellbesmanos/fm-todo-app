@@ -1,13 +1,5 @@
 <template>
-  <form @submit.prevent="addNewTask">
-    <input
-      v-model.trim="userInput"
-      type="text"
-      placeholder="Feed the dogs..."
-    />
-
-    <button type="submit">Add Task</button>
-  </form>
+  <TodoForm v-model="userInput" @add-task="addNewTask" />
 
   <TodoItemList :tasks="reversedList" />
 </template>
@@ -15,6 +7,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import TodoItemList from "./TodoItemList.vue";
+import TodoForm from "./TodoForm.vue";
 
 const userInput = ref("");
 const sampleData = ref([
