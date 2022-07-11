@@ -1,8 +1,12 @@
 <template>
   <TodoForm v-model="userInput" @add-task="addNewTask" />
 
-  <TodoItemList @toggle-task="toggleTask" :tasks="sampleData">
-    <TodoListToolbar :remainingTasks="remainingTasks" />
+  <TodoItemList @toggle-task="toggleTask" :tasks="filteredTasks">
+    <TodoListToolbar
+      @toggle-filter="toggleFilter"
+      :remainingTasks="remainingTasks"
+      :activeFilter="activeFilter"
+    />
   </TodoItemList>
 </template>
 
@@ -50,9 +54,27 @@ const sampleData = ref([
     isFinished: false,
   },
 ]);
+const activeFilter = ref("all");
 const itemIdCount = ref(sampleData.value.length);
+
 const remainingTasks = computed(
   () => sampleData.value.filter((task) => task.isFinished === false).length
+);
+
+const filteredTasks = computed(() =>
+  sampleData.value.filter((task) => {
+    if (activeFilter.value === "active") {
+      if (task.isFinished === false) {
+        return task;
+      }
+    } else if (activeFilter.value === "completed") {
+      if (task.isFinished === true) {
+        return task;
+      }
+    } else {
+      return task;
+    }
+  })
 );
 
 function addNewTask() {
@@ -67,5 +89,9 @@ function toggleTask(id) {
   const [item] = sampleData.value.filter((item) => item.id == id);
   const remaining = sampleData.value.filter((item) => item.id !== id);
   sampleData.value = [{ ...item, isFinished: !item.isFinished }, ...remaining];
+}
+
+function toggleFilter(filter) {
+  activeFilter.value = filter;
 }
 </script>
