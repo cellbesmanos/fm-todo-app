@@ -4,6 +4,7 @@
   <TodoItemList @toggle-task="toggleTask" :tasks="filteredTasks">
     <TodoListToolbar
       @toggle-filter="toggleFilter"
+      @clear-completed="clearCompleted"
       :remainingTasks="remainingTasks"
       :activeFilter="activeFilter"
     />
@@ -103,5 +104,13 @@ function toggleTask(id) {
 
 function toggleFilter(filter) {
   activeFilter.value = filter;
+}
+
+function clearCompleted() {
+  const allActiveTasks = sampleData.value.filter(
+    (task) => task.isFinished === false
+  );
+
+  sampleData.value = allActiveTasks;
 }
 </script>

@@ -17,7 +17,7 @@
       </button>
     </div>
 
-    <button type="button">Clear Completed</button>
+    <button @click="handleClick('clear')" type="button">Clear Completed</button>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ const { remainingTasks } = defineProps({
   activeFilter: String,
 });
 
-const emit = defineEmits(["toggleFilter"]);
+const emit = defineEmits(["toggleFilter", "clearCompleted"]);
 
 const filters = [
   { id: 1, filter: "all", label: "All" },
@@ -47,11 +47,16 @@ function addFilterStyles(activeFilter, filterName) {
   }
 }
 
-function handleClick(type, event) {
+function handleClick(type, event = null) {
   switch (type) {
     case "filter":
       emit("toggleFilter", event.target.dataset.filter);
       break;
+    case "clear":
+      emit("clearCompleted");
+      break;
+    default:
+      throw new Error("Invalid type for click.");
   }
 }
 </script>
