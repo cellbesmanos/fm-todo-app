@@ -1,9 +1,11 @@
 <template>
   <div>
     <ul>
+      <p v-if="tasks.length < 1">There is nothing in here.</p>
       <TodoItem
-        @bubble-click="handleClick"
+        v-else
         v-for="{ id, task, isFinished } in tasks"
+        @bubble-click="handleClick"
         :key="id"
         :id="id"
         :task="task"
