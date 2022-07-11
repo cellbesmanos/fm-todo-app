@@ -86,9 +86,18 @@ function addNewTask() {
 }
 
 function toggleTask(id) {
-  const [item] = sampleData.value.filter((item) => item.id == id);
-  const remaining = sampleData.value.filter((item) => item.id !== id);
-  sampleData.value = [{ ...item, isFinished: !item.isFinished }, ...remaining];
+  const updated = sampleData.value.map((task) => {
+    if (task.id === id) {
+      return {
+        ...task,
+        isFinished: !task.isFinished,
+      };
+    } else {
+      return task;
+    }
+  });
+
+  sampleData.value = updated;
 }
 
 function toggleFilter(filter) {
