@@ -78,7 +78,7 @@ const filteredTasks = computed(() =>
 );
 
 function addNewTask() {
-  sampleData.value.push({
+  sampleData.value.unshift({
     id: itemIdCount.value++,
     task: userInput.value,
     isFinished: false,
