@@ -81,6 +81,7 @@ function addNewTask() {
   sampleData.value.push({
     id: itemIdCount.value++,
     task: userInput.value,
+    isFinished: false,
   });
   userInput.value = "";
 }
