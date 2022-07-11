@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>7 tasks remaining</p>
+    <p>
+      {{ `${remainingTasks} ${remainingTasks > 1 ? "tasks" : "task"} left` }}
+    </p>
 
     <div>
       <button type="button" data-filter="all">All</button>
@@ -12,4 +14,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { remainingTasks } = defineProps({
+  remainingTasks: Number,
+});
+</script>

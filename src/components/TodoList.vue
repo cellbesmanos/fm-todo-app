@@ -1,13 +1,16 @@
 <template>
   <TodoForm v-model="userInput" @add-task="addNewTask" />
 
-  <TodoItemList @toggle-task="toggleTask" :tasks="sortedList" />
+  <TodoItemList @toggle-task="toggleTask" :tasks="sortedList">
+    <TodoListToolbar :remainingTasks="remainingTasks" />
+  </TodoItemList>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
 import TodoItemList from "./TodoItemList.vue";
 import TodoForm from "./TodoForm.vue";
+import TodoListToolbar from "./TodoListToolbar.vue";
 
 const userInput = ref("");
 const sampleData = ref([
@@ -48,6 +51,9 @@ const sampleData = ref([
   },
 ]);
 const itemsCount = computed(() => sampleData.value.length);
+const remainingTasks = computed(
+  () => sampleData.value.filter((task) => task.isFinished === false).length
+);
 const sortedList = computed(() =>
   [...sampleData.value].sort((curr, prev) => curr.id < prev.id)
 );

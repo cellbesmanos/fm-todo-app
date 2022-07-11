@@ -1,14 +1,18 @@
 <template>
-  <ul>
-    <TodoItem
-      @bubble-click="handleClick"
-      v-for="{ id, task, isFinished } in tasks"
-      :key="id"
-      :id="id"
-      :task="task"
-      :is-finished="isFinished"
-    />
-  </ul>
+  <div>
+    <ul>
+      <TodoItem
+        @bubble-click="handleClick"
+        v-for="{ id, task, isFinished } in tasks"
+        :key="id"
+        :id="id"
+        :task="task"
+        :is-finished="isFinished"
+      />
+    </ul>
+
+    <slot>Missing Toolbar Component</slot>
+  </div>
 </template>
 
 <script setup>
