@@ -1,7 +1,7 @@
 <template>
   <TodoForm v-model="userInput" @add-task="addNewTask" />
 
-  <TodoItemList @toggle-task="toggleTask" :tasks="sortedList">
+  <TodoItemList @toggle-task="toggleTask" :tasks="sampleData">
     <TodoListToolbar :remainingTasks="remainingTasks" />
   </TodoItemList>
 </template>
@@ -15,52 +15,49 @@ import TodoListToolbar from "./TodoListToolbar.vue";
 const userInput = ref("");
 const sampleData = ref([
   {
-    id: 1,
+    id: 0,
     task: "Write a cool JS library",
     isFinished: false,
   },
   {
-    id: 2,
+    id: 1,
     task: "Make it generic enough",
     isFinished: false,
   },
   {
-    id: 3,
+    id: 2,
     task: "Write README",
     isFinished: false,
   },
   {
-    id: 4,
+    id: 3,
     task: "Create some examples",
     isFinished: false,
   },
   {
-    id: 5,
+    id: 4,
     task: "Spam in Twitter and IRC to promote it",
     isFinished: false,
   },
   {
-    id: 6,
+    id: 5,
     task: "???",
     isFinished: false,
   },
   {
-    id: 7,
+    id: 6,
     task: "PROFIT",
     isFinished: false,
   },
 ]);
-const itemsCount = computed(() => sampleData.value.length);
+const itemIdCount = ref(sampleData.value.length);
 const remainingTasks = computed(
   () => sampleData.value.filter((task) => task.isFinished === false).length
-);
-const sortedList = computed(() =>
-  [...sampleData.value].sort((curr, prev) => curr.id < prev.id)
 );
 
 function addNewTask() {
   sampleData.value.push({
-    id: itemsCount + 1,
+    id: itemIdCount.value++,
     task: userInput.value,
   });
   userInput.value = "";
