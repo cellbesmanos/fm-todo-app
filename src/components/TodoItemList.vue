@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="todoItemList">
     <ul>
       <p v-if="tasks.length < 1">There is nothing in here.</p>
       <TodoItem
@@ -39,3 +39,9 @@ function handleClick({ id, type }) {
   }
 }
 </script>
+
+<style>
+.todoItemList ul {
+  list-style-type: none;
+}
+</style>
