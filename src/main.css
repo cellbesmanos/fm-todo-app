@@ -1,0 +1,47 @@
+:root {
+  --clr-blue: hsl(220, 98%, 61%);
+  --clr-gray-400: hsl(0, 0%, 98%);
+  --clr-blue-gray-500: hsl(236, 33%, 92%);
+  --clr-blue-gray-400: hsl(233, 11%, 84%);
+  --clr-blue-gray-500: hsl(236, 9%, 61%);
+  --clr-blue-gray-600: hsl(235, 19%, 35%);
+
+  --linear-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  --fw-400: 400;
+  --fw-500: 700;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.4;
+
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+input:hover,
+input:focus,
+button:hover,
+button:focus {
+  outline: 1px solid red;
+}
