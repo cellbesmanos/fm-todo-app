@@ -1,7 +1,7 @@
 :root {
   --clr-blue: hsl(220, 98%, 61%);
   --clr-gray-400: hsl(0, 0%, 98%);
-  --clr-blue-gray-500: hsl(236, 33%, 92%);
+  --clr-blue-gray-300: hsl(236, 33%, 92%);
   --clr-blue-gray-400: hsl(233, 11%, 84%);
   --clr-blue-gray-500: hsl(236, 9%, 61%);
   --clr-blue-gray-600: hsl(235, 19%, 35%);
@@ -32,16 +32,21 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  display: grid;
+  justify-content: center;
+  padding-block: 4.8rem;
+  padding-inline: 2.4rem;
+}
+
+input {
+  outline: none;
+}
+
 button {
   border: none;
   background-color: transparent;
+  outline: none;
 
   cursor: pointer;
-}
-
-input:hover,
-input:focus,
-button:hover,
-button:focus {
-  outline: 1px solid red;
 }
