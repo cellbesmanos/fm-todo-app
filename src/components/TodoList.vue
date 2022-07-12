@@ -1,18 +1,20 @@
 <template>
-  <TodoForm v-model="userInput" @add-task="addNewTask" />
+  <div class="todoList">
+    <TodoForm v-model="userInput" @add-task="addNewTask" />
 
-  <TodoItemList
-    @toggle-task="toggleTask"
-    @delete-task="deleteTask"
-    :tasks="filteredTasks"
-  >
-    <TodoListToolbar
-      @toggle-filter="toggleFilter"
-      @clear-completed="clearCompleted"
-      :remainingTasks="remainingTasks"
-      :activeFilter="activeFilter"
-    />
-  </TodoItemList>
+    <TodoItemList
+      @toggle-task="toggleTask"
+      @delete-task="deleteTask"
+      :tasks="filteredTasks"
+    >
+      <TodoListToolbar
+        @toggle-filter="toggleFilter"
+        @clear-completed="clearCompleted"
+        :remainingTasks="remainingTasks"
+        :activeFilter="activeFilter"
+      />
+    </TodoItemList>
+  </div>
 </template>
 
 <script setup>
@@ -124,3 +126,9 @@ function clearCompleted() {
   sampleData.value = allActiveTasks;
 }
 </script>
+
+<style>
+.todoList {
+  width: min(100%, 54rem);
+}
+</style>
