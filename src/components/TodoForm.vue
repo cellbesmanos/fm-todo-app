@@ -2,7 +2,7 @@
   <form @submit.prevent="$emit('addTask')">
     <input
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="handleInput($event)"
       type="text"
       placeholder="Feed the dogs..."
     />
@@ -13,5 +13,16 @@
 
 <script setup>
 defineProps(["modelValue"]);
-defineEmits(["update:modelValue", "addTask"]);
+const emit = defineEmits(["update:modelValue", "addTask"]);
+
+function toProperCase(str) {
+  if (!str) {
+    return;
+  }
+  return `${str[0].toUpperCase()}${str.slice(1)}`;
+}
+
+function handleInput(event) {
+  emit("update:modelValue", toProperCase(event.target.value));
+}
 </script>
