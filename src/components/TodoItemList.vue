@@ -24,9 +24,18 @@ const { tasks } = defineProps({
   tasks: Array,
 });
 
-const emit = defineEmits(["toggleTask"]);
+const emit = defineEmits(["toggleTask", "deleteTask"]);
 
-function handleClick(id) {
-  emit("toggleTask", id);
+function handleClick({ id, type }) {
+  switch (type) {
+    case "toggle":
+      emit("toggleTask", id);
+      break;
+    case "delete":
+      emit("deleteTask", id);
+      break;
+    default:
+      throw new Error("Invalid click type from task item");
+  }
 }
 </script>

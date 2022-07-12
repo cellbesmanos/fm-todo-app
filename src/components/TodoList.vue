@@ -1,7 +1,11 @@
 <template>
   <TodoForm v-model="userInput" @add-task="addNewTask" />
 
-  <TodoItemList @toggle-task="toggleTask" :tasks="filteredTasks">
+  <TodoItemList
+    @toggle-task="toggleTask"
+    @delete-task="deleteTask"
+    :tasks="filteredTasks"
+  >
     <TodoListToolbar
       @toggle-filter="toggleFilter"
       @clear-completed="clearCompleted"
@@ -100,6 +104,12 @@ function toggleTask(id) {
   });
 
   sampleData.value = updated;
+}
+
+function deleteTask(id) {
+  const remainingTasks = sampleData.value.filter((task) => task.id !== id);
+
+  sampleData.value = remainingTasks;
 }
 
 function toggleFilter(filter) {
