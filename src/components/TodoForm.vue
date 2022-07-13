@@ -28,6 +28,7 @@
       @input="handleInput($event)"
       type="text"
       placeholder="Feed the dogs..."
+      maxlength="35"
     />
   </form>
 </template>
