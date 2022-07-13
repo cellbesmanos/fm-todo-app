@@ -7,12 +7,12 @@
       placeholder="Feed the dogs..."
     />
 
-    <button type="submit">Add Task</button>
+    <button type="submit" :disabled="inputLength < 3">Add Task</button>
   </form>
 </template>
 
 <script setup>
-defineProps(["modelValue"]);
+defineProps(["modelValue", "inputLength"]);
 const emit = defineEmits(["update:modelValue", "addTask"]);
 
 function toProperCase(str) {

@@ -1,6 +1,10 @@
 <template>
   <div class="todoList">
-    <TodoForm v-model="userInput" @add-task="addNewTask" />
+    <TodoForm
+      v-model="userInput"
+      @add-task="addNewTask"
+      :inputLength="inputLength"
+    />
 
     <TodoItemList
       @toggle-task="toggleTask"
@@ -63,7 +67,7 @@ const sampleData = ref([
 ]);
 const activeFilter = ref("all");
 const itemIdCount = ref(sampleData.value.length);
-
+const inputLength = computed(() => userInput.value.length);
 const remainingTasks = computed(
   () => sampleData.value.filter((task) => task.isFinished === false).length
 );
@@ -85,6 +89,10 @@ const filteredTasks = computed(() =>
 );
 
 function addNewTask() {
+  if (!userInput.value) {
+    return;
+  }
+
   sampleData.value.unshift({
     id: itemIdCount.value++,
     task: userInput.value,
