@@ -143,7 +143,9 @@ function clearCompleted() {
 
 <style>
 .todoList {
-  grid-area: 2;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
   padding-inline: 2.4rem;
   margin-inline: auto;
   width: min(100%, 54rem);

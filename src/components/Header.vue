@@ -14,13 +14,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 @media screen and (min-width: 34.375em) {
   .header {
     --height: 30rem;
     background-image: url("../assets/bg-desktop-light.jpg");
-    grid-area: 1 / 3;
   }
 }
 
