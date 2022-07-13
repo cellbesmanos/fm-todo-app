@@ -43,8 +43,7 @@ main {
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr;
-  padding-block: 4.8rem;
-  padding-inline: 2.4rem;
+  grid-template-rows: 10.8rem 9.2rem;
   color: var(--clr-blue-gray-600);
 }
 

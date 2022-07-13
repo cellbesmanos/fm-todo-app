@@ -20,6 +20,7 @@
   .header {
     --height: 30rem;
     background-image: url("../assets/bg-desktop-light.jpg");
+    grid-area: 1 / 3;
   }
 }
 

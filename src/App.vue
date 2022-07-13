@@ -1,10 +1,11 @@
 <template>
   <main>
-    <h1>Hello World!</h1>
+    <Header />
     <TodoList />
   </main>
 </template>
 
 <script setup>
 import TodoList from "./components/TodoList.vue";
+import Header from "./components/Header.vue";
 </script>
