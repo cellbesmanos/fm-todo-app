@@ -47,6 +47,12 @@ main {
   color: var(--clr-blue-gray-600);
 }
 
+@media screen and (min-width: 34.375em) {
+  main {
+    grid-template-rows: 15.8rem 14.2rem;
+  }
+}
+
 input {
   outline: none;
 }

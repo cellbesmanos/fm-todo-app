@@ -21,13 +21,6 @@
   grid-column-end: 2;
 }
 
-@media screen and (min-width: 34.375em) {
-  .header {
-    --height: 30rem;
-    background-image: url("../assets/bg-desktop-light.jpg");
-  }
-}
-
 .header__toolbar {
   padding-block-start: 4.8rem;
   padding-inline: 2.4rem;
@@ -41,5 +34,20 @@
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 0.33em;
+}
+
+@media screen and (min-width: 34.375em) {
+  .header {
+    --height: 30rem;
+    background-image: url("../assets/bg-desktop-light.jpg");
+  }
+
+  .header__toolbar {
+    padding-block-start: 7.2rem;
+  }
+
+  .header__toolbar h1 {
+    font-size: 4rem;
+  }
 }
 </style>

@@ -59,6 +59,12 @@ function handleInput(event) {
   border-radius: var(--bradius);
 }
 
+@media screen and (min-width: 34.375em) {
+  .todoList__form {
+    min-height: 6.4rem;
+  }
+}
+
 .todoList__form-submit {
   --size: 2rem;
 
@@ -71,6 +77,12 @@ function handleInput(event) {
   border: 1px solid var(--clr-blue-gray-400);
 
   transition: border 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+@media screen and (min-width: 34.375em) {
+  .todoList__form-submit {
+    --size: 2.4rem;
+  }
 }
 
 .todoList__form-submit:disabled {
@@ -107,7 +119,14 @@ function handleInput(event) {
 }
 
 .todoList__form input {
+  padding-block-start: 0.4rem;
   flex-grow: 2;
   border: none;
+}
+
+@media screen and (min-width: 34.375em) {
+  .todoList__form input {
+    font-size: 1.8rem;
+  }
 }
 </style>

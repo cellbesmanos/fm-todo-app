@@ -64,6 +64,12 @@ function handleClick({ id, type }) {
   opacity: 0;
 }
 
+@media screen and (min-width: 34.375em) {
+  .todoList__list ul {
+    height: 42rem;
+  }
+}
+
 .todoList__list ul:first-child {
   border-top-left-radius: var(--bradius);
   border-top-right-radius: var(--bradius);

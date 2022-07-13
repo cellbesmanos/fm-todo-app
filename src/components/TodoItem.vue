@@ -78,6 +78,12 @@ function handleClick(event) {
   background-color: white;
 }
 
+@media screen and (min-width: 34.375em) {
+  .todoItem {
+    min-height: 6.3rem;
+  }
+}
+
 .todoItem__left {
   display: flex;
   align-items: center;
@@ -93,6 +99,12 @@ function handleClick(event) {
   border: 1px solid var(--clr-blue-gray-400);
 
   transition: border 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+@media screen and (min-width: 34.375em) {
+  .todoItem__toggle {
+    --size: 2.4rem;
+  }
 }
 
 .todoItem__toggle:hover,
@@ -130,6 +142,12 @@ function handleClick(event) {
   letter-spacing: -0.01em;
 
   transition: text-decoration 0.2s ease-in, opacity 0.1s ease-in;
+}
+
+@media screen and (min-width: 34.375em) {
+  .todoItem p {
+    font-size: 1.8rem;
+  }
 }
 
 .todoItem--finished p {

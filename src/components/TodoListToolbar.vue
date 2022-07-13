@@ -82,9 +82,22 @@ function handleClick(type, event = null) {
   box-shadow: var(--bshadow);
 }
 
+@media screen and (min-width: 34.375em) {
+  .todoList__toolbar {
+    font-size: 1.3rem;
+  }
+}
+
 .todoList__toolbar button {
   padding-block-start: 0.4rem;
   font-size: inherit;
+  color: var(--clr-blue-gray-600);
+  transition: color 0.2s ease-in-out;
+}
+
+.todoList__toolbar button:hover,
+.todoList__toolbar button:focus {
+  color: var(--clr-blue-gray-500);
 }
 
 .todoList__toolbar-filters {
@@ -111,7 +124,7 @@ function handleClick(type, event = null) {
   font-weight: var(--fw-500);
 }
 
-.todoList__filter--active {
+button.todoList__filter--active {
   color: var(--clr-blue);
 }
 </style>
