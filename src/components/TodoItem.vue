@@ -153,13 +153,4 @@ function handleClick(event) {
 .todoItem__delete:focus path {
   fill: var(--clr-blue);
 }
-
-@keyframes scaleUp {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 </style>
