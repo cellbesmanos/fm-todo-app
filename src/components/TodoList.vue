@@ -3,7 +3,7 @@
     <TodoForm
       v-model="userInput"
       @add-task="addNewTask"
-      :inputLength="inputLength"
+      :submitDisabled="submitDisabled"
     />
 
     <TodoItemList
@@ -67,7 +67,13 @@ const sampleData = ref([
 ]);
 const activeFilter = ref("all");
 const itemIdCount = ref(sampleData.value.length);
-const inputLength = computed(() => userInput.value.length);
+const submitDisabled = computed(() => {
+  if (!userInput.value) {
+    return true;
+  }
+
+  return userInput.value.length <= 3;
+});
 const remainingTasks = computed(
   () => sampleData.value.filter((task) => task.isFinished === false).length
 );

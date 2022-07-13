@@ -4,7 +4,7 @@
       class="todoList__form-submit"
       type="submit"
       aria-label="add task"
-      :disabled="inputLength < 3"
+      :disabled="submitDisabled"
     >
       <svg
         width="10"
@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-defineProps(["modelValue", "inputLength"]);
+defineProps(["modelValue", "submitDisabled"]);
 const emit = defineEmits(["update:modelValue", "addTask"]);
 
 function toProperCase(str) {
