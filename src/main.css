@@ -10,6 +10,8 @@
 
   --fw-400: 400;
   --fw-500: 700;
+
+  --bradius: 0.4rem;
 }
 
 *,
@@ -35,6 +37,7 @@ body {
 main {
   display: grid;
   justify-content: center;
+  grid-template-columns: 1fr;
   padding-block: 4.8rem;
   padding-inline: 2.4rem;
 }
