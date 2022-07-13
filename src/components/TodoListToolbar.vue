@@ -76,7 +76,8 @@ function handleClick(type, event = null) {
   font-size: 1.2rem;
   font-weight: var(--fw-400);
 
-  border-radius: var(--bradius);
+  border-bottom-left-radius: var(--bradius);
+  border-bottom-right-radius: var(--bradius);
   background-color: white;
   box-shadow: var(--bshadow);
 }

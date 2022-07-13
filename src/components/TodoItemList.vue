@@ -1,7 +1,9 @@
 <template>
-  <div class="todoItemList">
-    <ul>
-      <p v-if="tasks.length < 1">There is nothing in here.</p>
+  <div class="todoList__list flow">
+    <ul class="flow">
+      <p class="todoList__list-message" v-if="tasks.length < 1">
+        Where is everyone?
+      </p>
       <TodoItem
         v-else
         v-for="{ id, task, isFinished } in tasks"
@@ -41,7 +43,52 @@ function handleClick({ id, type }) {
 </script>
 
 <style>
-.todoItemList ul {
+.todoList__list {
+  margin-block-start: 1.6rem;
+
+  border-radius: var(--bradius);
+  background-color: var(--clr-blue-gray-300);
+  box-sizing: var(--bshadow);
+}
+
+.todoList__list ul {
+  transform: translateY(-1.2rem);
+  height: 37rem;
+  overflow-y: scroll;
   list-style-type: none;
+
+  animation-name: showUp;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.todoList__list ul:first-child {
+  border-top-left-radius: var(--bradius);
+  border-top-right-radius: var(--bradius);
+}
+
+.todoList__list-message {
+  font-size: 1.6rem;
+  margin-block-start: 1.6rem;
+  text-align: center;
+
+  animation-name: showUp;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

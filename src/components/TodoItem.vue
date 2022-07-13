@@ -75,6 +75,7 @@ function handleClick(event) {
   gap: 1.2rem;
   min-height: 5.2rem;
   padding-inline: 2rem;
+  background-color: white;
 }
 
 .todoItem__left {
