@@ -57,7 +57,6 @@ function handleInput(event) {
   padding-inline: 2rem;
   background-color: white;
   border-radius: var(--bradius);
-  box-shadow: var(--bshadow);
 }
 
 .todoList__form-submit {
