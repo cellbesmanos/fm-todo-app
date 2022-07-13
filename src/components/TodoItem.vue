@@ -125,7 +125,6 @@ function handleClick(event) {
 }
 
 .todoItem p {
-  padding-block-start: 0.4rem;
   font-size: 1.2rem;
   letter-spacing: -0.01em;
 
