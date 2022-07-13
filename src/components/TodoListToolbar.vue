@@ -78,7 +78,7 @@ function handleClick(type, event = null) {
 
   border-radius: var(--bradius);
   background-color: white;
-  box-shadow: 0 0.2rem 0.8rem hsl(236, 33%, 92%);
+  box-shadow: var(--bshadow);
 }
 
 .todoList__toolbar button {

@@ -12,6 +12,7 @@
   --fw-500: 700;
 
   --bradius: 0.4rem;
+  --bshadow: 0 0.2rem 0.8rem hsl(236, 33%, 92%);
 }
 
 *,
