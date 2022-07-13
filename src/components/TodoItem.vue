@@ -143,6 +143,7 @@ function handleClick(event) {
 
 .todoItem__delete svg {
   margin-block-start: 0.5rem;
+  pointer-events: none;
 }
 
 .todoItem__delete path {
