@@ -1,6 +1,6 @@
 # TODO App
 
-## A challenge from Frontend Mentor and a project to showcase my fundamental skills in Vue3 (Composition API). [Click here to view the live site](https://cell-todo-app.netlify.app/)
+A challenge from Frontend Mentor and a project to showcase my fundamental skills in Vue3 (Composition API). [Click here to view the live site](https://cell-todo-app.netlify.app/)
 
 ## It features:
 
