@@ -45,7 +45,7 @@ function handleClick({ id, type }) {
 <style>
 .todoList__list {
   margin-block-start: 1.6rem;
-
+  margin-block-end: 3.2rem;
   border-radius: var(--bradius);
   background-color: var(--clr-blue-gray-300);
   box-sizing: var(--bshadow);
