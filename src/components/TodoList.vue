@@ -28,45 +28,45 @@ import TodoForm from "./TodoForm.vue";
 import TodoListToolbar from "./TodoListToolbar.vue";
 
 const userInput = ref("");
-const sampleData = ref([
+const initialData = ref([
   {
     id: 0,
-    task: "Write a cool JS library",
-    isFinished: false,
+    task: "Complete online JavaScript course",
+    isFinished: true,
   },
   {
     id: 1,
-    task: "Make it generic enough",
+    task: "Jog around the park 3x",
     isFinished: false,
   },
   {
     id: 2,
-    task: "Write README",
+    task: "10 minutes meditation",
     isFinished: false,
   },
   {
     id: 3,
-    task: "Create some examples",
+    task: "Read for 1 hour",
     isFinished: false,
   },
   {
     id: 4,
-    task: "Spam in Twitter and IRC to promote it",
+    task: "Pick up groceries",
     isFinished: false,
   },
   {
     id: 5,
-    task: "???",
-    isFinished: false,
+    task: "Complete Todo App on Frontend Mentor",
+    isFinished: true,
   },
   {
     id: 6,
-    task: "PROFIT",
+    task: "Learn Vue Router v4",
     isFinished: false,
   },
 ]);
 const activeFilter = ref("all");
-const itemIdCount = ref(sampleData.value.length);
+const itemIdCount = ref(initialData.value.length);
 const submitDisabled = computed(() => {
   if (!userInput.value) {
     return true;
@@ -75,11 +75,11 @@ const submitDisabled = computed(() => {
   return userInput.value.length <= 3;
 });
 const remainingTasks = computed(
-  () => sampleData.value.filter((task) => task.isFinished === false).length
+  () => initialData.value.filter((task) => task.isFinished === false).length
 );
 
 const filteredTasks = computed(() =>
-  sampleData.value.filter((task) => {
+  initialData.value.filter((task) => {
     if (activeFilter.value === "active") {
       if (task.isFinished === false) {
         return task;
@@ -99,7 +99,7 @@ function addNewTask() {
     return;
   }
 
-  sampleData.value.unshift({
+  initialData.value.unshift({
     id: itemIdCount.value++,
     task: userInput.value,
     isFinished: false,
@@ -108,7 +108,7 @@ function addNewTask() {
 }
 
 function toggleTask(id) {
-  const updated = sampleData.value.map((task) => {
+  const updated = initialData.value.map((task) => {
     if (task.id === id) {
       return {
         ...task,
@@ -119,13 +119,13 @@ function toggleTask(id) {
     }
   });
 
-  sampleData.value = updated;
+  initialData.value = updated;
 }
 
 function deleteTask(id) {
-  const remainingTasks = sampleData.value.filter((task) => task.id !== id);
+  const remainingTasks = initialData.value.filter((task) => task.id !== id);
 
-  sampleData.value = remainingTasks;
+  initialData.value = remainingTasks;
 }
 
 function toggleFilter(filter) {
@@ -133,11 +133,11 @@ function toggleFilter(filter) {
 }
 
 function clearCompleted() {
-  const allActiveTasks = sampleData.value.filter(
+  const allActiveTasks = initialData.value.filter(
     (task) => task.isFinished === false
   );
 
-  sampleData.value = allActiveTasks;
+  initialData.value = allActiveTasks;
 }
 </script>
 
